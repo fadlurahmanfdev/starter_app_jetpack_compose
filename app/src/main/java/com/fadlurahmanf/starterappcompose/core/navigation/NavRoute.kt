@@ -2,8 +2,11 @@ package com.fadlurahmanf.starterappcompose.core.navigation
 
 
 sealed class NavRoute(val path: String) {
-    data object NavigationWithArgument :
-        NavRoute("navigation_with_argument_activity/{path1}/{path2}?optionalArg1={optionalArg1}&optionalArg2={optionalArg2}") {
+
+    data object ListFeatureActivity : NavRoute("list_feature_activity")
+    data object ExampleNavigationActivity : NavRoute("example_navigation_activity")
+    data object ExampleNavigationWithArgumentActivity :
+        NavRoute("example_navigation_with_argument_activity/{path1}/{path2}?optionalArg1={optionalArg1}&optionalArg2={optionalArg2}") {
         fun passPath(path1: String, path2: Int): String {
             return path.replace("{path1}", path1).replace("{path2}", "$path2")
         }
@@ -25,6 +28,7 @@ sealed class NavRoute(val path: String) {
             return path.replace("{path1}", path1).replace("{path2}", "$path2")
                 .replace("{optionalArg2}", optionalArg2)
         }
-
     }
+
+    data object ExampleCryptoActivity : NavRoute("example_crypto_activity")
 }

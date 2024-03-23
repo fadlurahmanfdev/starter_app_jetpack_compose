@@ -16,6 +16,11 @@ fun ListFeatureActivity(onNavigateToExampleNavigation: (FeatureModel) -> Unit) {
             title = "Navigation Feature",
             description = "List of navigation feature",
             key = "NAVIGATION"
+        ),
+        FeatureModel(
+            title = "Crypto Feature",
+            description = "Crypto Activity",
+            key = "CRYPTO"
         )
     )
     Scaffold { paddingValues ->

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -69,4 +71,15 @@ dependencies {
 
     // navigation
     implementation(libs.androidx.navigation.compose)
+
+    // ed25519 -> ref: https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.70
+    implementation(libs.bcprov.jdk15on)
+
+    implementation(libs.hilt.android.v251)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+}
+
+kapt {
+    correctErrorTypes = true
 }
