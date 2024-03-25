@@ -1,4 +1,4 @@
-package com.fadlurahmanf.starterappcompose.feature.example.presentation
+package com.fadlurahmanf.starterappcompose.feature.example.presentation.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -12,31 +12,19 @@ import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.compose.ItemFeatureCompose
 
 @Composable
-fun ListFeatureActivity(onNavigateToExampleNavigation: (FeatureModel) -> Unit) {
+fun ExampleUIActivity() {
     val features = listOf(
         FeatureModel(
-            title = "Navigation Feature",
-            description = "List of navigation feature",
-            key = "NAVIGATION"
+            title = "Show Loading Dialog",
+            description = "Show Loading Dialog",
+            key = "LOADING_DIALOG"
         ),
-        FeatureModel(
-            title = "Crypto Feature",
-            description = "Crypto Activity",
-            key = "CRYPTO"
-        ),
-        FeatureModel(
-            title = "UI Feature",
-            description = "List of UI Features",
-            key = "UI"
-        )
     )
     Scaffold { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             items(features) { feature ->
                 Box(
-                    modifier = Modifier.clickable {
-                        onNavigateToExampleNavigation(feature)
-                    },
+                    modifier = Modifier.clickable {},
                 ) {
                     ItemFeatureCompose(feature)
                 }
@@ -44,4 +32,3 @@ fun ListFeatureActivity(onNavigateToExampleNavigation: (FeatureModel) -> Unit) {
         }
     }
 }
-

@@ -11,6 +11,7 @@ import com.fadlurahmanf.starterappcompose.feature.example.presentation.crypto.Cr
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.ExampleNavigationActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.NavigationWithArgumentActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.splash.ExampleSplashActivity
+import com.fadlurahmanf.starterappcompose.feature.example.presentation.ui.ExampleUIActivity
 
 @Composable
 fun MainApp() {
@@ -37,6 +38,10 @@ fun MainApp() {
 
                         "CRYPTO" -> {
                             navController.navigate(NavRoute.ExampleCryptoActivity.path)
+                        }
+
+                        "UI" -> {
+                            navController.navigate(NavRoute.ExampleUIActivity.path)
                         }
                     }
                 }
@@ -88,6 +93,11 @@ fun MainApp() {
             NavRoute.ExampleCryptoActivity.path,
         ) { _ ->
             CryptoActivity()
+        }
+        composable(
+            NavRoute.ExampleUIActivity.path,
+        ) { _ ->
+            ExampleUIActivity()
         }
     }
 }

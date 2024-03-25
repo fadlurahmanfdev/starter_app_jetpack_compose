@@ -32,4 +32,6 @@ sealed class NavRoute(val path: String) {
     }
 
     data object ExampleCryptoActivity : NavRoute("example_crypto_activity")
+
+    data object ExampleUIActivity : NavRoute("example_ui_activity")
 }

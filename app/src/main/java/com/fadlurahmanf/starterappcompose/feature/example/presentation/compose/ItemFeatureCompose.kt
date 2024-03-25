@@ -1,6 +1,5 @@
 package com.fadlurahmanf.starterappcompose.feature.example.presentation.compose
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,17 +16,11 @@ import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
 
 @Composable
 fun ItemFeatureCompose(
-    feature: FeatureModel,
-    onNavigateToExampleNavigation: (FeatureModel) -> Unit
+    feature: FeatureModel
 ) {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .clickable(
-                onClick = {
-                    onNavigateToExampleNavigation(feature)
-                },
-            ), verticalAlignment = Alignment.CenterVertically
+            .fillMaxWidth(), verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
             painter = painterResource(id = R.drawable.baseline_app_shortcut_24),
