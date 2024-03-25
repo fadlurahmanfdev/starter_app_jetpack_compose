@@ -15,7 +15,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun ExampleSplashActivity(onSplashEnded: () -> Unit) {
     LaunchedEffect(key1 = null) {
-        delay(3000)
+        delay(1500)
         onSplashEnded()
     }
     Scaffold { paddingValues ->
