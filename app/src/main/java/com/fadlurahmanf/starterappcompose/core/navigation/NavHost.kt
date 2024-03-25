@@ -10,11 +10,23 @@ import com.fadlurahmanf.starterappcompose.feature.example.presentation.ListFeatu
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.crypto.CryptoActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.ExampleNavigationActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.NavigationWithArgumentActivity
+import com.fadlurahmanf.starterappcompose.feature.example.presentation.splash.ExampleSplashActivity
 
 @Composable
 fun MainApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = NavRoute.ListFeatureActivity.path) {
+    NavHost(navController = navController, startDestination = NavRoute.ExampleSplashActivity.path) {
+        composable(NavRoute.ExampleSplashActivity.path) {
+            ExampleSplashActivity(
+                onSplashEnded = {
+                    navController.navigate(NavRoute.ListFeatureActivity.path) {
+                        popUpTo(NavRoute.ExampleSplashActivity.path) {
+                            inclusive = true
+                        }
+                    }
+                }
+            )
+        }
         composable(NavRoute.ListFeatureActivity.path) {
             ListFeatureActivity(
                 onNavigateToExampleNavigation = { model ->

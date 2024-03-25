@@ -3,6 +3,7 @@ package com.fadlurahmanf.starterappcompose.core.navigation
 
 sealed class NavRoute(val path: String) {
 
+    data object ExampleSplashActivity : NavRoute("example_splash_activity")
     data object ListFeatureActivity : NavRoute("list_feature_activity")
     data object ExampleNavigationActivity : NavRoute("example_navigation_activity")
     data object ExampleNavigationWithArgumentActivity :
