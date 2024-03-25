@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.ListFeatureActivity
+import com.fadlurahmanf.starterappcompose.feature.example.presentation.api.ExampleApiActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.crypto.CryptoActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.ExampleNavigationActivity
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.navigation.NavigationWithArgumentActivity
@@ -42,6 +43,10 @@ fun MainApp() {
 
                         "UI" -> {
                             navController.navigate(NavRoute.ExampleUIActivity.path)
+                        }
+
+                        "API" -> {
+                            navController.navigate(NavRoute.ExampleApiActivity.path)
                         }
                     }
                 }
@@ -98,6 +103,11 @@ fun MainApp() {
             NavRoute.ExampleUIActivity.path,
         ) { _ ->
             ExampleUIActivity()
+        }
+        composable(
+            NavRoute.ExampleApiActivity.path,
+        ) { _ ->
+            ExampleApiActivity()
         }
     }
 }

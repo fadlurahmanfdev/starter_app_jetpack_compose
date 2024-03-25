@@ -1,4 +1,4 @@
-package com.fadlurahmanf.starterappcompose.feature.example.data
+package com.fadlurahmanf.starterappcompose.feature.example.data.model
 
 data class FeatureModel(
     val title: String,

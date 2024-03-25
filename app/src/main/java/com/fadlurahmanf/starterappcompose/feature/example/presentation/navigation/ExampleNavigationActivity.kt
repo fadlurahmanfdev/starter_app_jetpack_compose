@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
+import com.fadlurahmanf.starterappcompose.feature.example.data.model.FeatureModel
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.compose.ItemFeatureCompose
 
 @Composable

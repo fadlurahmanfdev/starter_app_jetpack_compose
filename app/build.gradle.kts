@@ -39,8 +39,45 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
+
+    flavorDimensions.add("environment")
+
+    productFlavors {
+        create("fake") {
+            dimension = "environment"
+            buildConfigField(
+                "String",
+                "BASE_MERCHANT_URL",
+                "\"https://merchant.bankmas.fake\""
+            )
+            applicationIdSuffix = ".fake"
+            resValue("string", "app_name", "Jetpack Compose Fake")
+        }
+
+        create("dev") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_MERCHANT_URL", "\"https://merchant.bankmas.my.id\"")
+            applicationIdSuffix = ".dev"
+            resValue("string", "app_name", "Jetpack Compose Dev")
+        }
+
+        create("staging") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_MERCHANT_URL", "\"https://merchant.bankmas.link\"")
+            applicationIdSuffix = ".staging"
+            resValue("string", "app_name", "Jetpack Compose Staging")
+        }
+
+        create("prod") {
+            dimension = "environment"
+            buildConfigField("String", "BASE_MERCHANT_URL", "\"https://merchant.bankmas.net\"")
+            resValue("string", "app_name", "Jetpack Compose")
+        }
+    }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
@@ -72,12 +109,20 @@ dependencies {
     // navigation
     implementation(libs.androidx.navigation.compose)
 
-    // ed25519 -> ref: https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.70
+    // ed25519 -> reference: https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.70
     implementation(libs.bcprov.jdk15on)
 
     implementation(libs.hilt.android.v251)
     kapt(libs.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
+    // reference: https://github.com/akarnokd/RxJavaRetrofitAdapter
+    implementation(libs.rxjava3.retrofit.adapter)
 }
 
 kapt {

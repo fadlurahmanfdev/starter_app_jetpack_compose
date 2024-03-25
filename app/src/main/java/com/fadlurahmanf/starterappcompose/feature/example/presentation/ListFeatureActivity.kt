@@ -8,7 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
+import com.fadlurahmanf.starterappcompose.feature.example.data.model.FeatureModel
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.compose.ItemFeatureCompose
 
 @Composable
@@ -28,6 +28,11 @@ fun ListFeatureActivity(onNavigateToExampleNavigation: (FeatureModel) -> Unit) {
             title = "UI Feature",
             description = "List of UI Features",
             key = "UI"
+        ),
+        FeatureModel(
+            title = "List of API",
+            description = "List of API Call",
+            key = "API"
         )
     )
     Scaffold { paddingValues ->

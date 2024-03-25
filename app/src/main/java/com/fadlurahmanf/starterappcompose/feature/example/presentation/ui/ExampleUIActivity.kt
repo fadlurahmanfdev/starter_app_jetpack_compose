@@ -31,7 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
+import com.fadlurahmanf.starterappcompose.feature.example.data.model.FeatureModel
 import com.fadlurahmanf.starterappcompose.feature.example.presentation.compose.ItemFeatureCompose
 
 @OptIn(ExperimentalMaterial3Api::class)

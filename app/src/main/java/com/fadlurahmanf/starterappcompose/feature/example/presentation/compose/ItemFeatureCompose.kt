@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.fadlurahmanf.starterappcompose.R
-import com.fadlurahmanf.starterappcompose.feature.example.data.FeatureModel
+import com.fadlurahmanf.starterappcompose.feature.example.data.model.FeatureModel
 
 @Composable
 fun ItemFeatureCompose(
