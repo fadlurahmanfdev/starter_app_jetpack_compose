@@ -123,6 +123,7 @@ dependencies {
     implementation(libs.rxjava)
     // reference: https://github.com/akarnokd/RxJavaRetrofitAdapter
     implementation(libs.rxjava3.retrofit.adapter)
+    implementation(libs.logging.interceptor)
 }
 
 kapt {
